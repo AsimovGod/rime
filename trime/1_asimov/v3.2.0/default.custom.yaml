@@ -1,0 +1,9 @@
+customization:
+  distribution_code_name: ""
+  distribution_version: ""
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Mon Sep 30 16:22:27 2019"
+  rime_version: 1.5.3
+patch:
+  schema_list:
+    - {schema: luna_pinyin}
