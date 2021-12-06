@@ -6,4 +6,4 @@ update_time: "Mon Sep 30 16:15:41 2019"
 
 
 installation_id: "trime"
-sync_dir: "/sdcard/Android/user/com.osfans.trime/sync"
+#sync_dir: ""
