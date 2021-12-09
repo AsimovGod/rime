@@ -1,4 +1,4 @@
 patch:
 #  "style/font_face": ""   #候选字体
-  "style/font_point": 12    #候选词大小
+  "style/font_point": 11    #候选词大小
   "style/horizontal": true   #横排排列
