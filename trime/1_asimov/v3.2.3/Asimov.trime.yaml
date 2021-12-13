@@ -856,7 +856,7 @@ liquid_keyboard:
   single_width: 60    #single类型的按键宽度
   vertical_gap: 1     #纵向按键间隙
   margin_x: 0.5         #左右按键间隙的1/2
-  keyboards: [ascii, cn, math, emoji, exit, list, table, symbol, ids , pinyin, jp, unit, exit, grease, rusa, korea, lation, yinbiao, exit, clipboard, history, exit]  #tab列表
+  keyboards: [history, ascii, cn, math, emoji, exit, list, table, symbol, ids , pinyin, jp, unit, exit, grease, rusa, korea, lation, yinbiao, exit, clipboard, exit]  #tab列表
   exit:
     name: 返回
     type: NO_KEY
@@ -1066,7 +1066,7 @@ preset_keyboards:
       - {click: Down}
       - {click: redo}
       - {click: liquid_keyboard_switch, long_click: liquid_keyboard_clipboard, key_back_color: gnb, key_text_color: gnt, width: 20}
-      - {click: paste}
+      - {click: paste_clip, long_click: paste}
       - {click: space1}
       - {click: Tab1}
       - {click: BackSpace}
