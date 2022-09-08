@@ -67,7 +67,7 @@ style:
   key_long_text_size: 14 #長標籤字號
   key_text_size: 22 #鍵字號
   key_width: 10.0 #鍵寬，佔螢幕寬的百分比
-  keyboards: [asimov, seldon, .default, letter, number, symbols, mini] #鍵盤配置：自動鍵盤、字母、數字、符號、精简（供插入实体键盘使用）
+  keyboards: [asimov, seldon1, seldon2, .default, letter, number, symbols, mini] #鍵盤配置：自動鍵盤、字母、數字、符號、精简（供插入实体键盘使用）
 ##  keyboards: [.default, letter, number, symbols, mini] #鍵盤配置：自動鍵盤、字母、數字、符號、精简（供插入实体键盘使用） 
   label_text_size: 22 #標籤字號
   label_font: label.ttf #編標籤字型
@@ -700,7 +700,7 @@ liquid_keyboard:
   single_width: 60    #single类型的按键宽度
   vertical_gap: 1     #纵向按键间隙
   margin_x: 0.5         #左右按键间隙的1/2
-  keyboards: [history, exit, ascii, cn, math, emoji, symbol, unit, draft, tabs, candidate, list, ids , table, new, jp, pinyin, grease, rusa, korea, lation, yinbiao, exit, clipboard]  #tab列表
+  keyboards: [exit, history, ascii, cn, math, emoji, symbol, unit, draft, tabs, candidate, list, ids , table, new, jp, pinyin, grease, rusa, korea, lation, yinbiao, exit, clipboard]  #tab列表
 ##  keyboards: [emoji, math, ascii, cn, history, clipboard, draft, tabs, exit, candidate, list, ids , table, symbol, unit, new, jp, pinyin, grease, rusa, korea, lation, yinbiao,  exit]  #tab列表
   exit:
     name: 返回
@@ -878,7 +878,8 @@ preset_keys:
   Shift_L: {label: Shift, send: Shift_L, shift_lock: ascii_long}
   Return: {label: Enter, send: Return}
 ##  Return: {label: enter_labels, send: Return}
-  Return1: {label: Enter, send: Return }
+  Return1: {label: enter_labels, send: Return }
+##  Return1: {label: Enter, send: Return }
   Hide: {label: 隱藏, send: BACK}
   BackSpace: {label: 退格, repeatable: true, send: BackSpace}
   space: {repeatable: false, functional: false, send: space}
@@ -917,7 +918,8 @@ preset_keys:
   # rime組合鍵
   F4: {label: 方案選單, send: F4}
   BackToPreviousSyllable: {label: 刪音節, send: Control+BackSpace}
-  CommitRawInput: {label: 編碼, send: Control+Return}
+  CommitRawInput: {label: 编码, send: Control+Return}
+##  CommitRawInput: {label: 編碼, send: Control+Return}
   CommitScriptText: {label: 編碼, send: Shift+Return}
   CommitComment: {label: 編碼, send: Control+Shift+Return}
   DeleteCandidate: {label: 刪詞, send: Control+Delete}
@@ -928,6 +930,14 @@ preset_keys:
   Charset_switch: {toggle: extended_charset, send: Mode_switch, states: [ 常用, 增廣 ]}
   Punct_switch: {toggle: ascii_punct, send: Mode_switch, states: [ 。，, ．， ]}
   #切换键盘
+
+###
+  Keyboard_asimov: {label: 返回, send: Eisu_toggle, select: asimov}
+  Keyboard_seldon1: {label: '12', send: Eisu_toggle, select: seldon1}
+  Keyboard_seldon2: {label: 小键盘, send: Eisu_toggle, select: seldon2}
+  liquid_keyboard_history: { label: '!?', send: function, command: liquid_keyboard, option: "history" }
+###
+
   Keyboard_symbols: {label: 符號, send: Eisu_toggle, select: symbols}
   Keyboard_number: {label: 數字, send: Eisu_toggle, select: number}
   Keyboard_mini: {label: 迷你, send: Eisu_toggle, select: mini}
@@ -937,9 +947,11 @@ preset_keys:
   liquid_keyboard_switch: { label: 更多, send: function, command: liquid_keyboard, option: "特殊" }
   liquid_keyboard_switch2: { toggle: _liquid_keyboard, send: Mode_switch, states: [ 更多, 更多 ] }
   liquid_keyboard_emoji: { label: 🙂, send: function, command: liquid_keyboard, option: "emoji" }
-  liquid_keyboard_clipboard: { label: 剪贴, send: function, command: liquid_keyboard, option: "剪贴" }
+  liquid_keyboard_clipboard: { label: 剪切板, send: function, command: liquid_keyboard, option: "剪贴" }
+##  liquid_keyboard_clipboard: { label: 剪贴, send: function, command: liquid_keyboard, option: "剪贴" }
   # trime設定
-  IME_switch: { label: 🌐, send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
+  IME_switch: { label: 输入法, send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
+##  IME_switch: { label: 🌐, send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
   IME_last: { label: 上一輸入法, send: LANGUAGE_SWITCH, select: .last } #直接切換到上一輸入法
   IME_next: { label: 下一輸入法, send: LANGUAGE_SWITCH, select: .next } #直接切換到下一輸入法
   Schema_switch: {label: 下一方案, send: Control+Shift+1}
@@ -949,7 +961,8 @@ preset_keys:
   Color_switch: {label: 配色, send: PROG_RED}
   Help: {label: 說明, send: Help}
   Info: {label: 關於, send: INFO}
-  Menu: {label: 方案, send: Menu}
+  Menu: {label: Menu, send: Menu}
+##  Menu: {label: 方案, send: Menu}
   Settings: {label: 設定, send: SETTINGS}
   Color_settings: {label: 配色, send: SETTINGS, option: "color"}
   Theme_settings: {label: 主題, send: SETTINGS, option: "theme"}
@@ -980,9 +993,9 @@ preset_keys:
 preset_keyboards:
 
   asimov:
-    name: 預設36鍵
-    author: "osfans <waxaca@163.com>"
-    ascii_mode: 0
+    name: 36鍵
+    author: AsimovGod
+    ascii_mode: 1
     width: 10
     height: 44
     label_transform: uppercase #uppercase|none 中文模式下的字母標籤自動大寫
@@ -996,90 +1009,136 @@ preset_keyboards:
     - {click: '6', long_click: '^'}
     - {click: '7', long_click: '&'}
     - {click: '8', long_click: '*'}
-    - {click: '9', long_click: '('}
-    - {click: '0', long_click: ')'}
+    - {click: '9', long_click: '<'}
+    - {click: '0', long_click: '>'}
     - {width: 5}
+    #
     - {click: 'q', long_click: '_'}
     - {click: 'w', long_click: '-'}
     - {click: 'e', long_click: '+'}
-    - {click: 'r', long_click: '='}
-    - {click: 't', long_click: '|'}
+    - {click: 'r', long_click: '/'}
+    - {click: 't', long_click: '='}
     - {click: 'y', long_click: '\'}
-    - {click: 'u', long_click: '['}
-    - {click: 'i', long_click: ']'}
-    - {click: 'o', long_click: '{'}
-    - {click: 'p', long_click: '}'}
+    - {click: 'u', long_click: '|'}
+    - {click: 'i', long_click: '{}{Left}'}
+    - {click: 'o', long_click: '[]{Left}'}
+    - {click: 'p', long_click: '(){Left}'}
     - {width: 5}
+    #
     - {click: 'a', long_click: select_all }
-    - {click: 's', long_click: Home}
-    - {click: 'd', long_click: End}
-    - {click: 'f', long_click: Page_Up}
-    - {click: 'g', long_click: Page_Down}
-    - {click: 'h', long_click: Left}
-    - {click: 'j', long_click: Down}
-    - {click: 'k', long_click: ':'}
-    - {click: 'l', long_click: ';'}
+    - {click: 's', long_click: '`'}
+    - {click: 'd', long_click: '~'}
+    - {click: 'f', long_click: '?'}
+    - {click: 'g', long_click: ';'}
+    - {click: 'h', long_click: Home}
+    - {click: 'j', long_click: UP}
+    - {click: 'k', long_click: End}
+    - {click: 'l', long_click: ':'}
     - {width: 5}
-    - {click: Shift_L, has_menu: "'", width: 15}
-    - {click: 'z', long_click: '`'}
+    #
+    - {click: Shift_L, width: 15}
+    - {click: 'z', long_click: undo}
     - {click: 'x', long_click: cut}
     - {click: 'c', long_click: copy}
     - {click: 'v', long_click: paste}
-    - {click: 'b', long_click: '~'}
-    - {click: 'n', long_click: '"'}
-    - {click: 'm', long_click: "MoeDict"}
-    - {click: BackSpace, width: 15}
-    - {click: Mode_switch, long_click: Menu, width: 15}
-    - {click: Keyboard_symbols, long_click: Keyboard_number}
-    - {click: ',', long_click: '<'}
-    - {click: space, width: 30}
-    - {click: '.', long_click: '>'}
-    - {click: '/', long_click: '?'}
-    - {click: Return, composing: Return1, long_click: CommitComment, width: 15}
+    - {click: 'b', long_click: Left}
+    - {click: 'n', long_click: Down}
+    - {click: 'm', long_click: Right}
+    - {click: BackSpace, swipe_up: Escape, width: 15}
+    #
+    - {click: Menu, long_click: IME_switch, width: 15}
+    - {click: liquid_keyboard_history, long_click: liquid_keyboard_clipboard}
+    - {click: ',', long_click: "'"}
+    - {click: space, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 30}
+    - {click: '.', long_click: '"'}
+    - {click: Keyboard_seldon1, long_click: Keyboard_seldon2}
+    - {click: Return, long_click: CommitComment, width: 15}
 
-  seldon:
-    name: 預設數字
-    author: "osfans <waxaca@163.com>"
+  seldon1:
+    name: 數字+编辑
+    author: AsimovGod
+    ascii_mode: 1
     width: 20
     height: 44
     keys:
-    - {click: '+'}
-    - {click: 'KP_1'}
-    - {click: 'KP_2'}
-    - {click: 'KP_3'}
+    - {click: '1', long_click:}
+    - {click: '2', long_click:}
+    - {click: '3', long_click:}
+    - {click: '+', long_click: '±'}
+    #
+    - {click: '4', long_click:}
+    - {click: '5', long_click:}
+    - {click: '6', long_click:}
+    - {click: '-', long_click: '_'}
+    #
+    - {click: '7', long_click:}
+    - {click: '8', long_click:}
+    - {click: '9', long_click:}
+    - {click: '*', long_click: '^'}
+    #
+    - {click: '.', long_click:}
+    - {click: '0', long_click:}
+    - {click: '=', long_click: '≠'}
+    - {click: '/', long_click: '\'}
+
+
     - {click: '#'}
-    - {click: '-'}
-    - {click: 'KP_4'}
-    - {click: 'KP_5'}
-    - {click: 'KP_6'}
+
     - {click: '%'}
-    - {click: '*'}
-    - {click: 'KP_7'}
-    - {click: 'KP_8'}
-    - {click: 'KP_9'}
+    - {}
+
     - {click: ':'}
-    - {click: '/'}
-    - {click: '±'}
-    - {click: 'KP_0'}
-    - {click: '.'}
+
+
     - {click: ','}
-    - {click: '='}
     - {click: Keyboard_default, long_click: Keyboard_symbols}
     - {click: space}
     - {click: BackSpace}
     - {click: Return}
+
+  seldon2:
+    name: 小键盘
+    author: AsimovGod
+    ascii_mode: 1
+    width: 10
+    height: 44
+    keyboard_height: 120
+    lock: true #切換程序時記憶鍵盤
+    keys:
+      - {click: '1', long_click: '!'}
+      - {click: '2', long_click: '@'}
+      - {click: '3', long_click: '#'}
+      - {click: '4', long_click: '$'}
+      - {click: '5', long_click: '%'}
+      - {click: '6', long_click: '^'}
+      - {click: '7', long_click: '&'}
+      - {click: '8', long_click: '*'}
+      - {click: '9', long_click: '('}
+      - {click: '0', long_click: ')'}
+      - {click: Shift_L}
+      - {click: Keyboard_symbols, long_click: Keyboard_number}
+      - {click: "'", long_click: '"'}
+      - {click: '-', long_click: '_'}
+      - {click: '=', long_click: '+'}
+      - {click: ',', long_click: '<'}
+      - {click: '.', long_click: '>'}
+      - {click: '/', long_click: '?'}
+      - {click: Mode_switch, long_click: Menu}
+      - {click: Return, composing: Return1, long_click: CommitComment}
 
 
   default:
     __include: preset_keyboards/asimov
 
   number:
-    __inculde: preset_keyboards/seldon
+    __include: preset_keyboards/seldon1
+
+  mini:
+    __include: preset_keyboards/seldon2
 
 
-
-#  default:
   default_bak:
+##  default:
     name: 預設40鍵
     author: "osfans <waxaca@163.com>"
     ascii_mode: 0
@@ -1134,7 +1193,8 @@ preset_keyboards:
       - {click: "'", long_click: '"'}
       - {click: BackSpace, width: 15}
       - {click: Return, composing: Return1, long_click: CommitComment, width: 15}
-  mini:
+    mini_bak:
+##  mini:
     name: 精简键盘
     author: "tumuyan"
     ascii_mode: 0
@@ -1377,8 +1437,8 @@ preset_keyboards:
     - {click: "'", long_click: '"'}
     - {click: BackSpace, swipe_right: Delete, swipe_left: Escape, width: 15}
     - {click: Return, long_click: CommitComment, width: 15}
-#  number:
   number_bak:
+##  number:
     name: 預設數字
     author: "osfans <waxaca@163.com>"
     width: 20
