@@ -1011,7 +1011,6 @@ preset_keyboards:
     - {click: '8', long_click: '*'}
     - {click: '9', long_click: '<'}
     - {click: '0', long_click: '>'}
-    - {width: 5}
     #
     - {click: 'q', long_click: '_'}
     - {click: 'w', long_click: '-'}
