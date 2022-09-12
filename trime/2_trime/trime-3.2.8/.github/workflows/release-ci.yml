@@ -1,0 +1,87 @@
+name: release ci
+on:
+  push:
+    tags:
+      - '*'
+env:
+  CI_NAME: Release CI
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout last commit
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get branch name
+        id: vars
+        run: |
+          echo ${GITHUB_REF#refs/*/}
+          echo CI_BRANCH=${GITHUB_REF#refs/*/} >> $GITHUB_ENV
+
+      - name: Calculate JNI cache hash
+        id: cache-hash
+        run: script/cache-hash.sh
+
+      - name: Fetch JNI cache
+        uses: actions/cache@v3
+        id: jni-cache
+        with:
+          path: "app/prebuilt"
+          key: jni-release-${{ steps.cache-hash.outputs.hash }}
+
+      - name: Fetch submodules
+        if: ${{ !steps.jni-cache.outputs.cache-hit }}
+        run: |
+          git submodule update --init --recursive
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: 17
+          # will restore cache of dependencies and wrappers
+          cache: 'gradle'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Setup keystore
+        run: |
+          echo "set up keystore for release"
+          echo "need help!!"
+          
+      - name: Spotless code style check
+        run: make spotless
+
+      - name: Install dependency
+        if: ${{ !steps.jni-cache.outputs.cache-hit }}
+        run: ./script/dependency.sh
+
+      - name: Build Trime
+        run: make debug
+        
+      - name: Build changelog
+        id: release_log
+        run: |
+          log=$(./script/changelog.sh)
+          # multiline
+          log="${log//'%'/'%25'}"
+          log="${log//$'\n'/'%0A'}"
+          log="${log//$'\r'/'%0D'}"
+
+          echo "::set-output name=changelog::$log"
+
+      - name: Add JNI cache
+        if: ${{ !steps.jni-cache.outputs.cache-hit }}
+        # TODO: replace debug with release after we switched to "make release"
+        run: cp -R app/build/intermediates/stripped_native_libs/debug/out/lib app/prebuilt
+
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "app/build/outputs/apk/**/*.apk"
+          body: |
+            ${{ steps.release_log.outputs.changelog }}
+          token: ${{ secrets.GITHUB_TOKEN }}
