@@ -14,8 +14,7 @@ style:
   candidate_font: han.ttf #候選字型
   candidate_padding: 5 #候選項內邊距
   candidate_spacing: 0.5 #候選間距
-  candidate_text_size: 21 #候選字號
-##  candidate_text_size: 22 #候選字號
+  candidate_text_size: 22 #候選字號
   candidate_use_cursor: true #高亮候選項
   candidate_view_height: 28 #候選區高度
   color_scheme: default #配色方案
@@ -26,7 +25,8 @@ style:
 ##  comment_text_size: 12 #編碼提示字號
   hanb_font: hanb.ttf #擴充字型
   horizontal: true #水平模式
-  horizontal_gap: 1 #鍵水平間距
+  horizontal_gap: 4 #鍵水平間距
+##  horizontal_gap: 1 #鍵水平間距
   keyboard_padding: 0 #竖屏模式下，屏幕左右两侧与键盘的距离（曲面屏减少误触）
   keyboard_padding_left: 0 #竖屏屏模式下，左手键盘布局，屏幕左侧与键盘的距离
   keyboard_padding_right: 40 #竖屏屏模式下，左手键盘布局，屏幕右侧与键盘的距离
@@ -66,20 +66,25 @@ style:
     - {start: "", click: "space", label: " 空格 "}
     - {start: "", click: "BackSpace", label: " 删除 "}
     - {start: "", click: "Return", label: " 回车 "}
+    ###
+    - {start: "", click: "liquid_keyboard_seldon", label: " 目录 "}
+    - {start: "", click: "liquid_keyboard_clipboard", label: " 剪切板 "}
+    ###
     - {start: "", click: "liquid_keyboard_exit", label: " 返回 "}
   key_font: symbol.ttf #鍵盤字型
   key_height: 44 #鍵高
   key_long_text_size: 14 #長標籤字號
   key_text_size: 22 #鍵字號
   key_width: 10.0 #鍵寬，佔螢幕寬的百分比
-  keyboards: [asimov, seldon1, seldon2, default, number, mini] #鍵盤配置：自動鍵盤、字母、數字、符號、精简（供插入实体键盘使用）
+  keyboards: [asimov, seldon1, seldon1_1, seldon2, default, number, mini] #鍵盤配置：自動鍵盤、字母、數字、符號、精简（供插入实体键盘使用）
 ##  keyboards: [.default, letter, number, symbols, mini] #鍵盤配置：自動鍵盤、字母、數字、符號、精简（供插入实体键盘使用） 
   label_text_size: 22 #標籤字號
   label_font: label.ttf #編標籤字型
   latin_font: latin.ttf #西文字型
   latin_locale: en_US #西文語言
   locale: zh_TW #預設語言 zh_TW,zh_CN,zh_HK,""
-  keyboard_height: 250 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height: 240 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+##  keyboard_height: 250 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
   preview_font: latin.ttf #按鍵提示字型
   preview_height: 60 #按鍵提示高度
@@ -87,7 +92,8 @@ style:
   preview_text_size: 40 #按鍵提示字號
   proximity_correction: true #按鍵糾錯
   reset_ascii_mode: false #顯示鍵盤時重置爲中文狀態
-  round_corner: 8 #按鍵圓角半徑
+  round_corner: 12 #按鍵圓角半徑
+##  round_corner: 8 #按鍵圓角半徑
   shadow_radius: 0.0 #按鍵陰影半徑
   speech_opencc_config: s2t.json #語音輸入簡繁轉換
   symbol_font: symbol.ttf #符號字型
@@ -97,7 +103,8 @@ style:
   text_size: 18 #編碼區字號
 ##  text_size: 16 #編碼區字號
   vertical_correction: -10
-  vertical_gap: 1 #鍵盤行距
+  vertical_gap: 4 #鍵盤行距
+#  vertical_gap: 1 #鍵盤行距
   long_text_font: comment.ttf #剪贴板等可能包含大段文本使用的字体
   #background_folder: #背景图保存在background目录下的哪个子目录
   key_long_text_border: 1
@@ -184,6 +191,38 @@ preset_color_schemes:
     shadow_color: 0x000000 #按鍵文字陰影
     text_color: 0x5a676e #編碼
     text_back_color: 0xcce4e7e9 #編碼區背景
+
+
+###
+  google_hong:
+    dark_scheme: hong_google
+    name: Light_谷歌/黑橙
+    author: skoj <skoj@qq.com>
+    text_color: 0x666666
+    candidate_text_color: 0x000000
+    back_color: 0xFFFFFF
+    border_color: 0xE2E2E2
+    hilited_text_color: 0x000000
+    hilited_back_color: 0xFFFFFF
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_candidate_back_color: 0x3975CE
+  hong_google:
+    light_scheme: google_hong
+    name: Dark_黑橙/谷歌
+    author: "风花絮"
+    back_color: 0xff353638
+    border_color: 0xff353638
+    candidate_text_color: 0xffffffff
+    hilited_back_color: 0x00141617
+    hilited_candidate_back_color: 0x30594231
+    hilited_candidate_text_color: 0xffffffff
+    hilited_text_color: 0xffc9cfd1
+    key_back_color: 0xff141617
+    label_color: 0xffffffff
+    off_key_text_color: 0xffd7d7d7
+    text_color: 0xffcd8c52
+###
+
 
   aqua:
     name: 碧水／Aqua
@@ -705,13 +744,14 @@ liquid_keyboard:
   single_width: 64    #single类型的按键宽度
   vertical_gap: 1     #纵向按键间隙
   margin_x: 0.5         #左右按键间隙的1/2
-  keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, tabs, exit, candidate, list, ids , table, symbol, unit, new, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, exit]  #tab列表
+  keyboards: [history, tabs, math, ascii, cn, emoji, unit, list, ids, table, symbol, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, new, clipboard, draft, collection, candidate]  #tab列表
   exit:
     name: 返回
     type: NO_KEY
     keys: EXIT
   tabs:
-    name: 更多
+    name: 目录
+##    name: 更多
     type: TABS
   new:
     name: 新行 #此类型不显示在候选栏中，但是打开“更多”TAB时，下一个按键会换行
@@ -883,7 +923,8 @@ preset_keys:
   # 編輯
 
 ###
-  Shift_S: {label: 选择, send: Shift_L, shift_lock: ascii_long}
+  Shift_A: {label: Shift, send: Shift_L}
+  Shift_S: {label: 选择, send: Shift_L}
   space_l: {label: 空格, repeatable: false, functional: false, send: space}
   paste_clip: {label: 剪贴, send: function, command: clipboard}
 ###
@@ -949,6 +990,8 @@ preset_keys:
 ###
   Keyboard_asimov: {label: 返回, send: Eisu_toggle, select: asimov}
   Keyboard_seldon1: {label: '数字', send: Eisu_toggle, select: seldon1}
+  Keyboard_seldon1_0: {label: '编/数', send: Eisu_toggle, select: seldon1}
+  Keyboard_seldon1_1: {label: '数/编', send: Eisu_toggle, select: seldon1_1}
   Keyboard_seldon2: {label: 小键盘, send: Eisu_toggle, select: seldon2}
   liquid_keyboard_seldon: { label: 符号, send: function, command: liquid_keyboard, option: "更多" }
 ###
@@ -1049,7 +1092,7 @@ preset_keyboards:
     - {click: 'l', long_click: "'"}
     - {width: 5}
     #4
-    - {click: Shift_L, width: 15}
+    - {click: Shift_A, width: 15}
     - {click: 'z', long_click: undo}
     - {click: 'x', long_click: cut}
     - {click: 'c', long_click: copy}
@@ -1075,48 +1118,100 @@ preset_keyboards:
     height: 44
     keys:
     #1
-    - {click: cut, long_click:}
-    - {click: Home, long_click:}
-    - {click: Up, long_click:}
-    - {click: Page_Up, long_click:}
-    - {click: '1', long_click:}
-    - {click: '2', long_click:}
-    - {click: '3', long_click:}
-    - {click: '+', long_click: '±'}
+    - {click: cut}
+    - {click: Home}
+    - {click: Up}
+    - {click: Page_Up}
+    - {click: '1', long_click: '!'}
+    - {click: '2', long_click: '@'}
+    - {click: '3', long_click: '#'}
+    - {click: "'", long_click: '"'}
     #2
-    - {click: copy, long_click:}
-    - {click: Left, long_click:}
+    - {click: copy}
+    - {click: Left}
     - {click: Shift_S}
-    - {click: Right, long_click:}
-    - {click: '4', long_click:}
-    - {click: '5', long_click:}
-    - {click: '6', long_click:}
-    - {click: '-', long_click: '_'}
+    - {click: Right}
+    - {click: '4', long_click: '$'}
+    - {click: '5', long_click: '%'}
+    - {click: '6', long_click: '^'}
+    - {click: '/', long_click: '?'}
     #3
-    - {click: paste, long_click:}
-    - {click: End, long_click:}
-    - {click: Down, long_click:}
-    - {click: Page_Down, long_click:}
-    - {click: '7', long_click:}
-    - {click: '8', long_click:}
-    - {click: '9', long_click:}
-    - {click: '*', long_click: '^'}
+    - {click: paste}
+    - {click: End}
+    - {click: Down}
+    - {click: Page_Down}
+    - {click: '7', long_click: '&'}
+    - {click: '8', long_click: '*'}
+    - {click: '9', long_click: '('}
+    - {click: '-', long_click: '_'}
     #4
-    - {click: paste_clip, long_click:}
-    - {click: undo, long_click: }
-    - {click: select_all, long_click: }
-    - {click: redo, long_click: }
-    - {click: '.', long_click:}
-    - {click: '0', long_click:}
-    - {click: '=', long_click: '≠'}
-    - {click: '/', long_click: '\'}
+    - {click: paste_clip}
+    - {click: undo}
+    - {click: select_all}
+    - {click: redo}
+    - {click: ',', long_click: '<'}
+    - {click: '.', long_click: '>'}
+    - {click: '0', long_click: ')'}
+    - {click: '=', long_click: '+'}
     #5
     - {click: Menu, long_click: Sync, width: 14}
     - {click: liquid_keyboard_seldon, long_click: liquid_keyboard_clipboard, width: 14}
-    - {click: Keyboard_asimov, long_click: Keyboard_seldon2, width: 14}
-    - {click: Mode_switch, long_click:, width: 16}
     - {click: space_l, long_click: BackToPreviousSyllable, width: 14}
+    - {click: Keyboard_seldon1_1, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 16}
     - {click: BackSpace, long_click: Escape, width: 14}
+    - {click: Keyboard_asimov, long_click: Keyboard_seldon2, width: 14}
+    - {click: Return, long_click: CommitRawInput, width: 14}
+
+  seldon1_1:
+    name: 数字/编辑
+    author: AsimovGod
+    ascii_mode: 1
+    width: 12.5
+    height: 44
+    keys:
+    #1
+    - {click: "'", long_click: '"'}
+    - {click: '1', long_click: '!'}
+    - {click: '2', long_click: '@'}
+    - {click: '3', long_click: '#'}
+    - {click: Home}
+    - {click: Up}
+    - {click: Page_Up}
+    - {click: cut}
+    #2
+    - {click: '/', long_click: '?'}
+    - {click: '4', long_click: '$'}
+    - {click: '5', long_click: '%'}
+    - {click: '6', long_click: '^'}
+    - {click: Left}
+    - {click: Shift_S}
+    - {click: Right}
+    - {click: copy}
+    #3
+    - {click: '-', long_click: '_'}
+    - {click: '7', long_click: '&'}
+    - {click: '8', long_click: '*'}
+    - {click: '9', long_click: '('}
+    - {click: End}
+    - {click: Down}
+    - {click: Page_Down}
+    - {click: paste_clip}
+    #4
+    - {click: '=', long_click: '+'}
+    - {click: ',', long_click: '<'}
+    - {click: '.', long_click: '>'}
+    - {click: '0', long_click: ')'}
+    - {click: undo}
+    - {click: select_all}
+    - {click: redo}
+    - {click: RepeatCommit}
+    #5
+    - {click: Menu, long_click: Sync, width: 14}
+    - {click: liquid_keyboard_seldon, long_click: liquid_keyboard_clipboard, width: 14}
+    - {click: space_l, long_click: BackToPreviousSyllable, width: 14}
+    - {click: Keyboard_seldon1_0, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 16}
+    - {click: BackSpace, long_click: Escape, width: 14}
+    - {click: Keyboard_asimov, long_click: Keyboard_seldon2, width: 14}
     - {click: Return, long_click: CommitRawInput, width: 14}
 
   seldon2:
@@ -1125,31 +1220,38 @@ preset_keyboards:
     ascii_mode: 1
     width: 10
     height: 44
-    keyboard_height: 120
-    lock: true #切換程序時記憶鍵盤
     keys:
     #1
-      - {click: '1', long_click: '!'}
-      - {click: '2', long_click: '@'}
-      - {click: '3', long_click: '#'}
-      - {click: '4', long_click: '$'}
-      - {click: '5', long_click: '%'}
-      - {click: '6', long_click: '^'}
-      - {click: '7', long_click: '&'}
-      - {click: '8', long_click: '*'}
-      - {click: '9', long_click: '('}
-      - {click: '0', long_click: ')'}
-      #2
-      - {click: Shift_L}
-      - {click: Keyboard_symbols, long_click: Keyboard_number}
-      - {click: "'", long_click: '"'}
-      - {click: '-', long_click: '_'}
-      - {click: '=', long_click: '+'}
-      - {click: ',', long_click: '<'}
-      - {click: '.', long_click: '>'}
-      - {click: '/', long_click: '?'}
-      - {click: Mode_switch, long_click: Menu}
-      - {click: Return, composing: Return1, long_click: CommitComment}
+    - {click: '1', long_click: '!'}
+    - {click: '2', long_click: '@'}
+    - {click: '3', long_click: '#'}
+    - {click: '4', long_click: '$'}
+    - {click: '5', long_click: '%'}
+    - {click: '6', long_click: '^'}
+    - {click: '7', long_click: '&'}
+    - {click: '8', long_click: '*'}
+    - {click: '9', long_click: '('}
+    - {click: '0', long_click: ')'}
+    #2
+    - {width: 5}
+    - {click: '`', long_click: '~'}
+    - {click: '-', long_click: '_'}
+    - {click: '=', long_click: '+'}
+    - {click: '[', long_click: '{'}
+    - {click: ']', long_click: '}'}
+    - {click: '\', long_click: '|'}
+    - {click: ';', long_click: ':'}
+    - {click: "'", long_click: '"'}
+    - {click: '/', long_click: '?'}
+    - {width: 5}
+    #3
+    - {click: Menu, long_click: Sync, width: 15}
+    - {click: liquid_keyboard_seldon, long_click: liquid_keyboard_clipboard}
+    - {click: ',', long_click: '<'}
+    - {click: space, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 30}
+    - {click: '.', long_click: '>'}
+    - {click: Keyboard_asimov, long_click: Keyboard_seldon1}
+    - {click: Return, long_click: CommitRawInput, width: 15}
 
 
   default:
