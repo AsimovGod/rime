@@ -2,7 +2,7 @@ patch:
   "switches/@0": {options: [ _key_IME_switch ], states: [ " ◆ " ]}
   "switches/@1": {name: ascii_punct, states: [ " 。， ", " ．， " ]}
   "switches/@2": {name: full_shape, states: [ " 半 ", " 全 " ]}
-  "switches/@3": {options: [ _keyboard_asimov, _keyboard_seldon1, _keyboard_seldon2 ], states: [ "   默认键盘   ","   辅助键盘   ","   精简键盘   " ]}
+  "switches/@3": {options: [ _keyboard_asimov, _keyboard_seldon1, _keyboard_seldon2 ], states: [ "   默认键盘   ", "   辅助键盘   ", "   精简键盘   " ]}
   "switches/@4": {name: simplification,states: [ " 漢 ", " 汉 " ]}
   "switches/@5": {name: ascii_mode, reset: 1, states: [ " 中 ", " en " ]}
-  "switches/@6": {options: [ _key_Hide ], states: [ " ▼ " ]}
+  "switches/@6": {options: [ _key_Hide ], states: [ " ▼" ]}
