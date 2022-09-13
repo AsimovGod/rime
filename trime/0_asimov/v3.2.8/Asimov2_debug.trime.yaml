@@ -196,9 +196,9 @@ preset_color_schemes:
 
 
 ###
-  _1_google:
-    dark_scheme: _1_hong
-    name: 谷歌/黑橙
+  1_google:
+    dark_scheme: 1_google
+    name: _谷歌/黑橙
     author: skoj <skoj@qq.com>
     text_color: 0x666666
     candidate_text_color: 0x000000
@@ -208,9 +208,9 @@ preset_color_schemes:
     hilited_back_color: 0xFFFFFF
     hilited_candidate_text_color: 0xFFFFFF
     hilited_candidate_back_color: 0x3975CE
-  _1_hong:
-    light_scheme: _1_google
-    name: 黑橙/谷歌
+  1_hong:
+    light_scheme: 1_google
+    name: _黑橙/谷歌
     author: "风花絮"
     back_color: 0xff353638
     border_color: 0xff353638
@@ -929,6 +929,7 @@ preset_keys:
 ###
   Shift_A: {label: Shift, send: Shift_L, shift_lock: ascii_long}
   Shift_C: {label: Shift, send: Shift_L, shift_lock: click}
+  Shift_S: {label: 选择, send: Shift_L, shift_lock: click}
   space_l: {label: 空格, repeatable: false, functional: false, send: space}
   paste_clip: {label: 剪贴, send: function, command: clipboard}
 ###
@@ -1127,27 +1128,27 @@ preset_keyboards:
     - {click: Home}
     - {click: Up}
     - {click: Page_Up}
-    - {click: '1', long_click: '!'}
-    - {click: '2', long_click: '@'}
-    - {click: '3', long_click: '#'}
+    - {click: 'KP_1', long_click: '!'}
+    - {click: 'KP_2', long_click: '@'}
+    - {click: 'KP_3', long_click: '#'}
     - {click: "'", long_click: '"'}
     #2
     - {click: copy}
     - {click: Left}
-    - {click: Shift_C}
+    - {click: Shift_S}
     - {click: Right}
-    - {click: '4', long_click: '$'}
-    - {click: '5', long_click: '%'}
-    - {click: '6', long_click: '^'}
+    - {click: 'KP_4', long_click: '$'}
+    - {click: 'KP_5', long_click: '%'}
+    - {click: 'KP_6', long_click: '^'}
     - {click: '/', long_click: '?'}
     #3
     - {click: paste_clip}
     - {click: End}
     - {click: Down}
     - {click: Page_Down}
-    - {click: '7', long_click: '&'}
-    - {click: '8', long_click: '*'}
-    - {click: '9', long_click: '('}
+    - {click: 'KP_7', long_click: '&'}
+    - {click: 'KP_8', long_click: '*'}
+    - {click: 'KP_9', long_click: '('}
     - {click: '-', long_click: '_'}
     #4
     - {click: DeleteCandidate}
@@ -1156,7 +1157,7 @@ preset_keyboards:
     - {click: redo}
     - {click: ',', long_click: '<'}
     - {click: '.', long_click: '>'}
-    - {click: '0', long_click: ')'}
+    - {click: 'KP_0', long_click: ')'}
     - {click: '=', long_click: '+'}
     #5
     - {click: Menu, long_click: Sync, width: 14}
@@ -1176,27 +1177,27 @@ preset_keyboards:
     keys:
     #1
     - {click: "'", long_click: '"'}
-    - {click: '1', long_click: '!'}
-    - {click: '2', long_click: '@'}
-    - {click: '3', long_click: '#'}
+    - {click: 'KP_1', long_click: '!'}
+    - {click: 'KP_2', long_click: '@'}
+    - {click: 'KP_3', long_click: '#'}
     - {click: Home}
     - {click: Up}
     - {click: Page_Up}
     - {click: cut}
     #2
     - {click: '/', long_click: '?'}
-    - {click: '4', long_click: '$'}
-    - {click: '5', long_click: '%'}
-    - {click: '6', long_click: '^'}
+    - {click: 'KP_4', long_click: '$'}
+    - {click: 'KP_5', long_click: '%'}
+    - {click: 'KP_6', long_click: '^'}
     - {click: Left}
-    - {click: Shift_C}
+    - {click: Shift_S}
     - {click: Right}
     - {click: copy}
     #3
     - {click: '-', long_click: '_'}
-    - {click: '7', long_click: '&'}
-    - {click: '8', long_click: '*'}
-    - {click: '9', long_click: '('}
+    - {click: 'KP_7', long_click: '&'}
+    - {click: 'KP_8', long_click: '*'}
+    - {click: 'KP_9', long_click: '('}
     - {click: End}
     - {click: Down}
     - {click: Page_Down}
@@ -1205,7 +1206,7 @@ preset_keyboards:
     - {click: '=', long_click: '+'}
     - {click: ',', long_click: '<'}
     - {click: '.', long_click: '>'}
-    - {click: '0', long_click: ')'}
+    - {click: 'KP_0', long_click: ')'}
     - {click: undo}
     - {click: select_all}
     - {click: redo}
