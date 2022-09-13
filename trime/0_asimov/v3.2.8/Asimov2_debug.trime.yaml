@@ -746,7 +746,7 @@ liquid_keyboard:
   single_width: 64    #single类型的按键宽度
   vertical_gap: 1     #纵向按键间隙
   margin_x: 0.5         #左右按键间隙的1/2
-  keyboards: [tabs, history, math, ascii, cn, list, emoji, yanwenzi, ids, table, jp, pinyin, grease, rusa, korea, lation, yinbiao, unit, symbol, new, clipboard, draft, collection, candidate]  #tab列表
+  keyboards: [tabs, history, math, ascii, cn, emoji, yanwenzi, list, ids, table, unit, jp, pinyin, grease, rusa, korea, lation, yinbiao, symbol, new, clipboard, draft, collection, candidate]  #tab列表
 ##  keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, tabs, exit, candidate, list, ids , table, symbol, unit, new, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, exit]  #tab列表
   exit:
     name: 返回
@@ -954,10 +954,13 @@ preset_keys:
 ##  Page_Up: {label: 上頁, send: Page_Up}
   Page_Down: {label: 下页, send: Page_Down}
 ##  Page_Down: {label: 下頁, send: Page_Down}
-  Left: {label: '←', send: Left}
-  Down: {label: '↓', send: Down}
-  Up: {label: '↑', send: Up}
-  Right: {label: '→', send: Right}
+  Left: {label: '←', send: Left, repeatable: true}
+##  Left: {label: '←', send: Left}
+  Down: {label: '↓', send: Down, repeatable: true}
+##  Down: {label: '↓', send: Down}
+  Up: {label: '↑', send: Up, repeatable: true}
+##  Up: {label: '↑', send: Up}
+  Right: {label: '→', send: Right, repeatable: true}
   select_all: {label: 全选, send: Control+a}
 ##  select_all: {label: 全選, send: Control+a}
   Clear: {label: 清除, text: "{Control+a}{BackSpace}"} #全選並刪除
@@ -1226,7 +1229,7 @@ preset_keyboards:
     ascii_mode: 1
     width: 10
     height: 44
-    keyboard_height: 150
+    keyboard_height: 160
     keys:
     #1
     - {click: '1', long_click: '!'}
@@ -1256,7 +1259,7 @@ preset_keyboards:
     - {click: liquid_keyboard_seldon, long_click: liquid_keyboard_clipboard, width: 11}
     - {click: ',', long_click: '<'}
     - {click: Shift_C, width: 11}
-    - {click: space, long_click: Mode_switch, width: 14}
+    - {click: space_l, long_click: Mode_switch, width: 14}
     - {click: BackSpace, swipe_up: Escape, width: 11}
     - {click: '.', long_click: '>'}
     - {click: Keyboard_asimov, long_click: Keyboard_seldon1, width: 11}
