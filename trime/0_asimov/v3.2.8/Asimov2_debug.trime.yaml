@@ -197,7 +197,7 @@ preset_color_schemes:
 
 ###
   1_google:
-    dark_scheme: 1_google
+    dark_scheme: 1_hong
     name: _谷歌/黑橙
     author: skoj <skoj@qq.com>
     text_color: 0x666666
