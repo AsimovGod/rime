@@ -999,8 +999,8 @@ preset_keys:
 ###
   Keyboard_asimov: {label: 返回, send: Eisu_toggle, select: asimov}
   Keyboard_seldon1: {label: 辅助, send: Eisu_toggle, select: seldon1}
-  Keyboard_seldon1_0: {label: 编/数, send: Eisu_toggle, select: seldon1}
-  Keyboard_seldon1_1: {label: 数/编, send: Eisu_toggle, select: seldon1_1}
+  Keyboard_seldon1_0: {label: 数/编, send: Eisu_toggle, select: seldon1}
+  Keyboard_seldon1_1: {label: 编/数, send: Eisu_toggle, select: seldon1_1}
   Keyboard_seldon2: {label: 小键盘, send: Eisu_toggle, select: seldon2}
   liquid_keyboard_seldon: { label: 更多, send: function, command: liquid_keyboard, option: "目录" }
 ###
