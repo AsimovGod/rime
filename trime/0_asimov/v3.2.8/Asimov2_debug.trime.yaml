@@ -1259,7 +1259,7 @@ preset_keyboards:
     - {click: liquid_keyboard_seldon, long_click: liquid_keyboard_clipboard, width: 11}
     - {click: ',', long_click: '<'}
     - {click: Shift_C, width: 11}
-    - {click: space_l, long_click: Mode_switch, width: 14}
+    - {click: space_l, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 14}
     - {click: BackSpace, swipe_up: Escape, width: 11}
     - {click: '.', long_click: '>'}
     - {click: Keyboard_asimov, long_click: Keyboard_seldon1, width: 11}
