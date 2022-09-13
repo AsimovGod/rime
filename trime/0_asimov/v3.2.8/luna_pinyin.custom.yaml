@@ -1,0 +1,8 @@
+patch:
+  "switches/@1": {options: [ _key_IME_switch ],status: [ " ◆ " ]}
+  "switches/@2": {name: ascii_punct,states: [ " 。， ", " ．， " ]}
+  "switches/@3": {name: full_shape,states: [ " 半 ", " 全 " ]}
+  "switches/@4": {options: [_keyboard_asimov, _keyboard_seldon1, _keyboard_seldon2 ],status: [ "   默认键盘   ","   辅助键盘   ","   精简键盘   " ]}
+  "switches/@5": {name: simplification,states: [ " 漢 ", " 汉 " ]}
+  "switches/@6": {name: ascii_mode,reset: 0,states: [ " 中 ", " en " ]}
+  "switches/@7": {options: [ _key_Hide ],status: [ " ▼ " ]}
