@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference
+        android:defaultValue="auto"
+        app:iconSpaceReserved="false"
+        app:entries="@array/other__ui_mode_entries"
+        app:entryValues="@array/other__ui_mode_values"
+        app:key="other__ui_mode"
+        app:title="@string/other__ui_mode_title"
+        app:useSimpleSummaryProvider="true" />
+
+    <SwitchPreferenceCompat app:key="other__show_app_icon"
+        android:defaultValue="true"
+        app:iconSpaceReserved="false"
+        app:title="@string/other__show_app_icon_title"
+        app:summaryOn="@string/other__show_app_icon_on_summary"
+        app:summaryOff="@string/other__show_app_icon_off_summary"/>
+
+    <SwitchPreferenceCompat android:key="other__show_status_bar_icon"
+        app:iconSpaceReserved="false"
+        android:title="@string/other__show_status_bar_icon_title" />
+
+    <SwitchPreferenceCompat android:key="other__destroy_on_quit"
+        app:iconSpaceReserved="false"
+        android:title="@string/other__destroy_on_quit_title" />
+
+    <PreferenceCategory android:key="other_clipboard"
+        app:iconSpaceReserved="false"
+        app:title="@string/other_clipboard">
+        <ListPreference
+            app:key="other_clipboard_limit"
+            android:defaultValue="100"
+            app:iconSpaceReserved="false"
+            app:entries="@array/other__clipboard_manager_entries"
+            app:entryValues="@array/other__clipboard_manager_values"
+            app:title="@string/other_clipboard_limit"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference android:key="other_managed_clipboard"
+            app:iconSpaceReserved="false"
+            android:title="@string/other_managed_clipboard"/>
+
+        <EditTextPreference android:key="other__clipboard_compare"
+            app:iconSpaceReserved="false"
+            android:title="@string/other__clipboard_compare_title"
+            android:defaultValue=""
+            app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference android:key="other__clipboard_output"
+            app:iconSpaceReserved="false"
+            android:title="@string/other__clipboard_output_title"
+            android:defaultValue=""
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="other_collection"
+        app:iconSpaceReserved="false"
+        app:title="@string/other_collection">
+        <Preference android:key="other_managed_collection"
+            app:iconSpaceReserved="false"
+            android:title="@string/other_managed_collection"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="other_draft"
+        app:iconSpaceReserved="false"
+        app:title="@string/other_draft">
+        <ListPreference
+            app:key="other_draft_limit"
+            app:iconSpaceReserved="false"
+            app:entries="@array/other__clipboard_manager_entries"
+            app:entryValues="@array/other__clipboard_manager_values"
+            app:title="@string/other_draft_limit"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference android:key="other_managed_draft"
+            app:iconSpaceReserved="false"
+            android:title="@string/other_managed_draft"/>
+
+        <EditTextPreference android:key="other__draft_output"
+            app:iconSpaceReserved="false"
+            android:title="@string/other__draft_output_title"
+            android:defaultValue=""
+            app:useSimpleSummaryProvider="true"/>
+
+        <EditTextPreference android:key="other__draft_exclude_app"
+            app:iconSpaceReserved="false"
+            android:title="@string/other__draft_exclude_app_title"
+            android:defaultValue=""
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

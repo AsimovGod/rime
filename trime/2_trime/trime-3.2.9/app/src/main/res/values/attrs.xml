@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="useSimpleSummaryProvider" format="boolean" />
+    <declare-styleable name="DialogSeekBarPreferenceAttrs">
+        <attr name="min" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="seekBarIncrement" format="integer" />
+        <attr name="android:defaultValue" format="integer" />
+        <attr name="systemDefaultValue" format="integer" />
+        <attr name="systemDefaultValueText" format="string" />
+        <attr name="unit" format="string" />
+        <attr name="useSimpleSummaryProvider" />
+    </declare-styleable>
+
+    <declare-styleable name="FolderPickerPreferenceAttrs">
+        <attr name="useSimpleSummaryProvider" />
+    </declare-styleable>
+</resources>
