@@ -66,12 +66,12 @@ style:
     - {start: "", composition: "%s", end: "", letter_spacing: 0} #letter_spacing需要>=Android5.0。TODO: 不爲0時，會導致不換行的問題
     - {start: "\n", label: "%s.", candidate: "%s", comment: " %s", end: "", sep: " "}
   liquid_keyboard_window: #液态键盘模式下显示的悬浮窗口組件
-#    - {start: "", click: "space", label: " 空格 "}
+##    - {start: "", click: "space", label: " 空格 "}
     - {start: "", click: "BackSpace", label: " 删除 "}
-#    - {start: "", click: "Return", label: " 回车 "}
-    - {start: "", click: "liquid_keyboard_tabs", label: " 目录 "}
-    - {start: "", click: "liquid_keyboard_collection", label: " 收藏 "}
+##    - {start: "", click: "Return", label: " 回车 "}
+#    - {start: "", click: "liquid_keyboard_collection", label: " 收藏 "}
     - {start: "", click: "liquid_keyboard_clipboard", label: " 剪贴 "}
+    - {start: "", click: "liquid_keyboard_tabs", label: " 目录 "}
     - {start: "", click: "liquid_keyboard_exit", label: " 返回 "}
   key_font: symbol.ttf #鍵盤字型
   key_height: 44 #鍵高
@@ -937,7 +937,7 @@ preset_keys:
   Shift_S: {label: 选择, send: Shift_L, shift_lock: click}
   space_l: {label: 空格, repeatable: false, functional: false, send: space}
   paste_clip: {label: 剪贴, send: function, command: clipboard}
-  Tab: {label: Tab, sed: Tab}
+  Tab: {label: Tab, send: Tab}
 ###
 
   Shift_L: {label: Shift, send: Shift_L, shift_lock: long}
@@ -946,7 +946,8 @@ preset_keys:
 ##  Return: {label: enter_labels, send: Return}
   Return1: {label: enter_labels, send: Return }
 ##  Return1: {label: Enter, send: Return }
-  Hide: {label: 隱藏, send: BACK}
+  Hide: {label: ▼, send: BACK}
+##  Hide: {label: 隱藏, send: BACK}
   BackSpace: {label: 退格, repeatable: true, send: BackSpace}
   space: {repeatable: false, functional: false, send: space}
   Escape: {label: Esc, send: Escape}
@@ -994,12 +995,14 @@ preset_keys:
   DeleteCandidate: {label: 删词, send: Control+Delete}
 ##  DeleteCandidate: {label: 刪詞, send: Control+Delete}
   # rime狀態
-  Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中zh, en英 ]}
-##  Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中文, 西文 ]}
+  Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中文, 西文 ]}
+  Mode_switch_1: {toggle: ascii_mode, send: Mode_switch, states: [ 西文, 中文 ]}
   Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
+  Zenkaku_Hankaku_1: {toggle: full_shape, send: Mode_switch, states: [ 全角, 半角 ]}
   Henkan: {toggle: simplification, send: Mode_switch, states: [ 漢字, 汉字 ]}
   Charset_switch: {toggle: extended_charset, send: Mode_switch, states: [ 常用, 增廣 ]}
   Punct_switch: {toggle: ascii_punct, send: Mode_switch, states: [ 。，, ．， ]}
+  Punct_switch_1: {toggle: ascii_punct, send: Mode_switch, states: [ ．，, 。， ]}
   #切换键盘
 
 ###
@@ -1008,7 +1011,7 @@ preset_keys:
   Keyboard_seldon2: {label: 编辑, send: Eisu_toggle, select: seldon2}
   liquid_keyboard_tabs: { label: 更多, send: function, command: liquid_keyboard, option: "目录" }
   liquid_keyboard_collection: { label: 收藏, send: function, command: liquid_keyboard, option: "收藏" }
-  liquid_keyboard_candidate: { label: 候选, send: function, command: liquid_keyboard, option: "候选" }
+  liquid_keyboard_candidate: { label: " ", send: function, command: liquid_keyboard, option: "候选" }
 ###
 
   Keyboard_symbols: {label: 符號, send: Eisu_toggle, select: symbols}
@@ -1026,16 +1029,18 @@ preset_keys:
   IME_switch: { label: 🌐, send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
   IME_last: { label: 上一輸入法, send: LANGUAGE_SWITCH, select: .last } #直接切換到上一輸入法
   IME_next: { label: 下一輸入法, send: LANGUAGE_SWITCH, select: .next } #直接切換到下一輸入法
-  Schema_switch: {label: 下一方案, send: Control+Shift+1}
+  Schema_switch: {label: " ", send: Control+Shift+1}
+##  Schema_switch: {label: 下一方案, send: Control+Shift+1}
   one_hand_switch_1: {toggle: _one_hand_mode_1, send: Mode_switch, states: [ 左手, 普通 ]}
   one_hand_switch_2: {toggle: _one_hand_mode_2, send: Mode_switch, states: [ 右手, 普通 ]}
   one_hand_switch_3: {toggle: _one_hand_mode_3, send: Mode_switch, states: [ 左手, 右手 ]}
   Color_switch: {label: 配色, send: PROG_RED}
   Help: {label: 說明, send: Help}
   Info: {label: 關於, send: INFO}
-  Menu: {label: Menu, send: Menu}
+  Menu: {label: ◆, send: Menu}
 ##  Menu: {label: 方案, send: Menu}
-  Settings: {label: 設定, send: SETTINGS}
+  Settings: {label: Config, send: SETTINGS}
+##  Settings: {label: 設定, send: SETTINGS}
   Color_settings: {label: 配色, send: SETTINGS, option: "color"}
   Theme_settings: {label: 主題, send: SETTINGS, option: "theme"}
   Schema_settings: {label: 方案, send: SETTINGS, option: "schema"}
@@ -1072,6 +1077,13 @@ preset_keyboards:
     width: 10
     height: 44
     keys:
+    #0
+    - {click: Menu, long_click: Schema_switch, width: 16}
+    - {click: Mode_switch, long_click: Mode_switch_1, width: 17}
+    - {click: Zenkaku_Hankaku, long_click: Zenkaku_Hankaku_1, width: 17}
+    - {click: Henkan, long_click: Charset_switch, width: 17}
+    - {click: Punct_switch, long_click: Punct_switch_1, width: 17}
+    - {click: Hide, long_click: liquid_keyboard_candidate, width: 16}
     #1
     - {click: '1', long_click: '!'}
     - {click: '2', long_click: '@'}
@@ -1117,7 +1129,7 @@ preset_keyboards:
     - {click: 'm', long_click: Right}
     - {click: BackSpace, swipe_up: Escape, width: 15}
     #5
-    - {click: Menu, long_click: Sync, width: 15}
+    - {click: Settings, long_click: Sync, width: 15}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs}
     - {click: ',', label: '，', long_click: '<'}
     - {click: space, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 30}
@@ -1169,7 +1181,7 @@ preset_keyboards:
     - {click: 'KP_0', long_click: ')'}
     - {click: '=', long_click: '+'}
     #5
-    - {click: Menu, long_click: Sync, width: 14}
+    - {click: Settings, long_click: Sync, width: 14}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, width: 14}
     - {click: Shift_S, width: 14}
     - {click: space_l,, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 16}
@@ -1221,55 +1233,13 @@ preset_keyboards:
     - {click: redo}
     - {click: DeleteCandidate}
     #5
-    - {click: Menu, long_click: Sync, width: 14}
+    - {click: Settings, long_click: Sync, width: 14}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, width: 14}
     - {click: Shift_S, width: 14}
     - {click: space_l,, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 16}
     - {click: BackSpace, swipe_up: Escape, width: 14}
     - {click: Keyboard_asimov, long_click: Keyboard_seldon2, width: 14}
     - {click: Return, long_click: CommitRawInput, width: 14}
-
-  seldon3:
-    name: 精简键盘
-    author: AsimovGod
-    ascii_mode: 1
-    width: 10
-    height: 44
-    keyboard_height: 160
-    keys:
-    #1
-    - {click: '1', long_click: '!'}
-    - {click: '2', long_click: '@'}
-    - {click: '3', long_click: '#'}
-    - {click: '4', long_click: '$'}
-    - {click: '5', long_click: '%'}
-    - {click: '6', long_click: '^'}
-    - {click: '7', long_click: '&'}
-    - {click: '8', long_click: '*'}
-    - {click: '9', long_click: '('}
-    - {click: '0', long_click: ')'}
-    #2
-    - {width: 5}
-    - {click: '`', long_click: '~'}
-    - {click: '-', long_click: '_'}
-    - {click: '=', long_click: '+'}
-    - {click: '[', long_click: '{'}
-    - {click: ']', long_click: '}'}
-    - {click: '\', long_click: '|'}
-    - {click: ';', long_click: ':'}
-    - {click: "'", long_click: '"'}
-    - {click: '/', long_click: '?'}
-    - {width: 5}
-    #3
-    - {click: Menu, long_click: Sync, width: 11}
-    - {click: liquid_keyboard_seldon, long_click: liquid_keyboard_clipboard, width: 11}
-    - {click: ',', long_click: '<'}
-    - {click: Shift_C, width: 11}
-    - {click: space_l, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 14}
-    - {click: BackSpace, swipe_up: Escape, width: 11}
-    - {click: '.', long_click: '>'}
-    - {click: Keyboard_asimov, long_click: Keyboard_seldon1, width: 11}
-    - {click: Return, long_click: CommitRawInput, width: 11}
 
 
   default:
@@ -1278,8 +1248,6 @@ preset_keyboards:
   number:
     __include: preset_keyboards/seldon1
 
-  mini:
-    __include: preset_keyboards/seldon3
 ###
 
   default_bak:
