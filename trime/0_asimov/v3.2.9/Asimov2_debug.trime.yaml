@@ -62,7 +62,7 @@ style:
     elevation: 5 #陰影(>=Android5.0)
     movable: once #是否可移動窗口，或僅移動一次 true|false|once
   window: #懸浮窗口組件
-    - {start: "", move: 'ㄓ ', end: ""}
+#    - {start: "", move: 'ㄓ ', end: ""}
     - {start: "", composition: "%s", end: "", letter_spacing: 0} #letter_spacing需要>=Android5.0。TODO: 不爲0時，會導致不換行的問題
     - {start: "\n", label: "%s.", candidate: "%s", comment: " %s", end: "", sep: " "}
   liquid_keyboard_window: #液态键盘模式下显示的悬浮窗口組件
@@ -746,7 +746,7 @@ liquid_keyboard:
   single_width: 64    #single类型的按键宽度
   vertical_gap: 1     #纵向按键间隙
   margin_x: 0.5         #左右按键间隙的1/2
-  keyboards: [collection, clipboard, draft, candidate, tabs, history, ascii, cn, emoji, math, list, ids , table, unit, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, symbol, symbollist]  #tab列表
+  keyboards: [collection, clipboard, draft, candidate, tabs, exit, history, ascii, cn, emoji, math, list, ids , table, unit, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, symbol, symbollist]  #tab列表
 ##  keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, tabs, exit, candidate, list, ids , table, symbol, unit, new, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, symbollist, exit]  #tab列表
   exit:
     name: 返回
@@ -862,7 +862,8 @@ liquid_keyboard:
     keys: ",.?!:;/\\|*-+=^$`'\"^~@#%&()[]{}_"
   ids:
     type: SINGLE
-    name: IDS
+    name: 组字
+#    name: IDS
     keys: "⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷↔"
   jp:
     type: SINGLE
@@ -1169,7 +1170,7 @@ preset_keyboards:
     - {click: '=', long_click: '+'}
     #5
     - {click: Menu, long_click: Sync, width: 14}
-    - {click: liquid_keyboard_seldon, long_click: liquid_keyboard_clipboard, width: 14}
+    - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, width: 14}
     - {click: Shift_S, width: 14}
     - {click: space_l,, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 16}
     - {click: BackSpace, swipe_up: Escape, width: 14}
@@ -1221,7 +1222,7 @@ preset_keyboards:
     - {click: DeleteCandidate}
     #5
     - {click: Menu, long_click: Sync, width: 14}
-    - {click: liquid_keyboard_seldon, long_click: liquid_keyboard_clipboard, width: 14}
+    - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, width: 14}
     - {click: Shift_S, width: 14}
     - {click: space_l,, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 16}
     - {click: BackSpace, swipe_up: Escape, width: 14}
