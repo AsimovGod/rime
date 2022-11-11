@@ -1,0 +1,6 @@
+patch:
+  "switches/@0": {name: ascii_mode, reset: 1, states: [ "", "" ]}  #中文,西文
+  "switches/@1": {name: full_shape, reset: 0, states: [ "", "" ]}  #半角,全角
+  "switches/@2": {name: simplification, reset: 1, states: [ "", "" ]}  #漢字,汉字
+  "switches/@3": {name: ascii_punct, reset: 1, states: [ "", "" ]}  #"。，","．，"
+  "switches/@4": {option: [_key_IME_switch], states: [ "  ㄓ  同文输入法  " ]}
