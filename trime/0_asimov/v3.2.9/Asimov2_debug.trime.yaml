@@ -35,7 +35,8 @@ style:
   keyboard_padding_land: 40 #横屏模式下，屏幕左右两侧与键盘的距离（避免横屏按键过度拉伸变形）
   keyboard_padding_land_bottom: 0 #横屏模式下，屏幕下侧与键盘的距离
   layout: #懸浮窗口設置
-    position: fixed #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+    position: bottom_right #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+##    position: fixed #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
     min_length: 5 #最小詞長
     max_length: 10 #超過字數則換行
     sticky_lines: 0 #固頂行數
@@ -66,22 +67,26 @@ style:
     - {start: "\n", label: "%s.", candidate: "%s", comment: " %s", end: "", sep: " "}
   liquid_keyboard_window: #液态键盘模式下显示的悬浮窗口組件
 #    - {start: "", click: "space", label: " 空格 "}
-#    - {start: "", click: "BackSpace", label: " 删除 "}
+    - {start: "", click: "BackSpace", label: " 删除 "}
 #    - {start: "", click: "Return", label: " 回车 "}
-    - {start: "", click: "liquid_keyboard_exit", label: " 返回 "}
+    - {start: "", click: "liquid_keyboard_tabs", label: "目录"}
+    - {start: "", click: "liquid_keyboard_collection", label: "收藏"
+    - {start: "", click: "liquid_keyboard_clipboard", label: "剪贴"}
+    - {start: "", click: "liquid_keyboard_exit", label: "返回"}
   key_font: symbol.ttf #鍵盤字型
   key_height: 44 #鍵高
   key_long_text_size: 14 #長標籤字號
   key_text_size: 22 #鍵字號
   key_width: 10.0 #鍵寬，佔螢幕寬的百分比
-  keyboards: [asimov, seldon1, seldon2]
+  keyboards: [asimov, seldon1, seldon2, default, number]
 ##  keyboards: [.default, letter, number, symbols, mini] #鍵盤配置：自動鍵盤、字母、數字、符號、精简（供插入实体键盘使用） 
   label_text_size: 22 #標籤字號
   label_font: label.ttf #編標籤字型
   latin_font: latin.ttf #西文字型
   latin_locale: en_US #西文語言
   locale: zh_TW #預設語言 zh_TW,zh_CN,zh_HK,""
-  keyboard_height: 250 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height: 270 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+##  keyboard_height: 250 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
   preview_font: latin.ttf #按鍵提示字型
   preview_height: 60 #按鍵提示高度
@@ -193,7 +198,7 @@ preset_color_schemes:
 ###
   1_google:
     dark_scheme: 1_hong
-    name: _谷歌/黑橙
+    name: 1_google
     author: skoj <skoj@qq.com>
     text_color: 0x666666
     candidate_text_color: 0x000000
@@ -205,7 +210,7 @@ preset_color_schemes:
     hilited_candidate_back_color: 0x3975CE
   1_hong:
     light_scheme: 1_google
-    name: _黑橙/谷歌
+    name: 1_hong
     author: "风花絮"
     back_color: 0xff353638
     border_color: 0xff353638
@@ -741,8 +746,8 @@ liquid_keyboard:
   single_width: 64    #single类型的按键宽度
   vertical_gap: 1     #纵向按键间隙
   margin_x: 0.5         #左右按键间隙的1/2
-  keyboards: [collection, clipboard, history, math, ascii, cn, exit, emoji, yanwenzi, list, ids, table, unit, exit, jp, pinyin, grease, rusa, korea, lation, yinbiao, symbol, symbollist, tabs, exit]  #tab列表
-##  keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, tabs, exit, candidate, list, ids , table, symbol, unit, new, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, exit]  #tab列表
+  keyboards: [collection, clipboard, draft, candidate, tabs, history, ascii, cn, emoji, math, list, ids , table, unit, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, symbol, symbollist]  #tab列表
+##  keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, tabs, exit, candidate, list, ids , table, symbol, unit, new, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, symbollist, exit]  #tab列表
   exit:
     name: 返回
     type: NO_KEY
@@ -761,6 +766,7 @@ liquid_keyboard:
     name: 常用
     type: HISTORY
   emoji:
+    name: 表情
     type: SINGLE
     keys: "🙂😂🤣😆🙃😅🥺🙈🙉🙊☹😑😄🤐😨😱🌚🌝🤔❤💔🌹💣👌👍😣😥😮🙄😏😕😯😪😫😴😌🤑😉😋😎😍😘😚😛😜😝😒😓😔😲😷🤒😇🤓🤗🤕🙁😖😞😟😤😢😭😦😧😨😩😬😰😳😵😡😠☝✌🖕👎🙏🤘👏💪💋☘🍀🌸☕🍵🍺🍻🍦🍬🍚🍜🍲🍖🎂💤"
   clipboard:
@@ -999,7 +1005,9 @@ preset_keys:
   Keyboard_asimov: {label: 返回, send: Eisu_toggle, select: asimov}
   Keyboard_seldon1: {label: 123, send: Eisu_toggle, select: seldon1}
   Keyboard_seldon2: {label: 编辑, send: Eisu_toggle, select: seldon2}
-  liquid_keyboard_seldon: { label: 更多, send: function, command: liquid_keyboard, option: "目录" }
+  liquid_keyboard_tabs: { label: 更多, send: function, command: liquid_keyboard, option: "目录" }
+  liquid_keyboard_collection: { label: 收藏, send: function, command: liquid_keyboard, option: "收藏" }
+  liquid_keyboard_candidate: { label: 候选, send: function, command: liquid_keyboard, option: "候选" }
 ###
 
   Keyboard_symbols: {label: 符號, send: Eisu_toggle, select: symbols}
@@ -1109,7 +1117,7 @@ preset_keyboards:
     - {click: BackSpace, swipe_up: Escape, width: 15}
     #5
     - {click: Menu, long_click: Sync, width: 15}
-    - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_seldon}
+    - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs}
     - {click: ',', label: '，', long_click: '<'}
     - {click: space, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 30}
     - {click: '.', label: '。', long_click: '>'}
@@ -1270,7 +1278,7 @@ preset_keyboards:
     __include: preset_keyboards/seldon1
 
   mini:
-    __include: preset_keyboards/seldon2
+    __include: preset_keyboards/seldon3
 ###
 
   default_bak:
