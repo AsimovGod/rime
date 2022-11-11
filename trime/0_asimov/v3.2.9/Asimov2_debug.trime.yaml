@@ -69,10 +69,10 @@ style:
 #    - {start: "", click: "space", label: " 空格 "}
     - {start: "", click: "BackSpace", label: " 删除 "}
 #    - {start: "", click: "Return", label: " 回车 "}
-    - {start: "", click: "liquid_keyboard_tabs", label: "目录"}
-    - {start: "", click: "liquid_keyboard_collection", label: "收藏"
-    - {start: "", click: "liquid_keyboard_clipboard", label: "剪贴"}
-    - {start: "", click: "liquid_keyboard_exit", label: "返回"}
+    - {start: "", click: "liquid_keyboard_tabs", label: " 目录 "}
+    - {start: "", click: "liquid_keyboard_collection", label: " 收藏 "}
+    - {start: "", click: "liquid_keyboard_clipboard", label: " 剪贴 "}
+    - {start: "", click: "liquid_keyboard_exit", label: " 返回 "}
   key_font: symbol.ttf #鍵盤字型
   key_height: 44 #鍵高
   key_long_text_size: 14 #長標籤字號
