@@ -1023,7 +1023,7 @@ preset_keys:
   liquid_keyboard_clipboard: { label: ⏍, send: function, command: liquid_keyboard, option: "剪贴" }
 ##  liquid_keyboard_clipboard: { label: 剪贴, send: function, command: liquid_keyboard, option: "剪贴" }
   # trime設定
-  IME_switch: { label: "同文", send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
+  IME_switch: { label: "同文输入法", send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
 ##  IME_switch: { label: 🌐, send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
   IME_last: { label: 上一輸入法, send: LANGUAGE_SWITCH, select: .last } #直接切換到上一輸入法
   IME_next: { label: 下一輸入法, send: LANGUAGE_SWITCH, select: .next } #直接切換到下一輸入法
@@ -1078,11 +1078,11 @@ preset_keyboards:
     keys:
     #0
     - {click: Candidate_switch, long_click: Comment_switch, width: 12, key_back_color: 0x00}
-    - {click: Punct_switch, width: 12, key_back_color: 0x00}
-    - {click: Zenkaku_Hankaku, width: 12, key_back_color: 0x00}
-    - {click: IME_switch, width: 28, key_back_color: 0x00}
-    - {click: Henkan, width: 12, key_back_color: 0x00}
-    - {click: Mode_switch,  width: 12, key_back_color: 0x00}
+    - {click: Punct_switch, width: 12, key_text_size: 20, key_back_color: 0x00}
+    - {click: Zenkaku_Hankaku, width: 12, key_text_size: 20, key_back_color: 0x00}
+    - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
+    - {click: Henkan, width: 12, key_text_size: 20, key_back_color: 0x00}
+    - {click: Mode_switch, key_text_size: 20, width: 12, key_back_color: 0x00}
     - {click: Hide, long_click: liquid_keyboard_candidate, width: 12, key_back_color: 0x00}
     #1
     - {click: '1', long_click: '!'}
@@ -1130,7 +1130,7 @@ preset_keyboards:
     - {click: BackSpace, swipe_up: Escape, width: 15}
     #5
     - {click: Menu, long_click: Schema_switch, width: 15}
-    - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs}
+    - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 14}
     - {click: ',', label: '，', long_click: '<'}
     - {click: space, width: 30}
     - {click: '.', label: '。', long_click: '>'}
