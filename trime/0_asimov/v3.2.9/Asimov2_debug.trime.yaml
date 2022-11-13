@@ -74,7 +74,7 @@ style:
     - {start: "", click: "liquid_keyboard_exit", label: " 返回 "}
   key_font: symbol.ttf #鍵盤字型
   key_height: 44 #鍵高
-  key_long_text_size: 20 #長標籤字號
+  key_long_text_size: 18 #長標籤字號
   key_text_size: 22 #鍵字號
   key_width: 10.0 #鍵寬，佔螢幕寬的百分比
   keyboards: [asimov, seldon1, seldon2, default, number]
@@ -84,7 +84,7 @@ style:
   latin_font: latin.ttf #西文字型
   latin_locale: en_US #西文語言
   locale: zh_TW #預設語言 zh_TW,zh_CN,zh_HK,""
-  keyboard_height: 270 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height: 300 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
 ##  keyboard_height: 250 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
   preview_font: latin.ttf #按鍵提示字型
@@ -745,7 +745,7 @@ liquid_keyboard:
   single_width: 64    #single类型的按键宽度
   vertical_gap: 1     #纵向按键间隙
   margin_x: 0.5         #左右按键间隙的1/2
-  keyboards: [collection, clipboard, draft, candidate, tabs, exit, history, ascii, cn, emoji, math, list, ids , table, unit, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, symbol, symbollist]  #tab列表
+  keyboards: [candidate, collection, clipboard, draft, tabs, exit, history, ascii, cn, emoji, math, list, ids , table, unit, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, symbol, symbollist]  #tab列表
 ##  keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, tabs, exit, candidate, list, ids , table, symbol, unit, new, jp, pinyin, grease, rusa, korea, lation, yinbiao, yanwenzi, symbollist, exit]  #tab列表
   exit:
     name: 返回
@@ -1007,7 +1007,7 @@ preset_keys:
   Keyboard_seldon2: {label: 编辑, send: Eisu_toggle, select: seldon2}
   liquid_keyboard_tabs: { label: 更多, send: function, command: liquid_keyboard, option: "目录" }
   liquid_keyboard_collection: { label: 收藏, send: function, command: liquid_keyboard, option: "收藏" }
-  liquid_keyboard_candidate: { label: 更多, send: function, command: liquid_keyboard, option: "候选" }
+  liquid_keyboard_candidate: { label: "", send: function, command: liquid_keyboard, option: "候选" }
 ###
 
   Keyboard_symbols: {label: 符號, send: Eisu_toggle, select: symbols}
@@ -1042,7 +1042,7 @@ preset_keys:
   Schema_settings: {label: 方案, send: SETTINGS, option: "schema"}
   Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [ "◇", "□"]}
 ##  Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [ 有候選, 無候選]}
-  Comment_switch: {toggle: _hide_comment, send: Mode_switch}
+  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [ "", ""]}
 ##  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [ 有註釋, 無註釋]}
   Hint_switch: {toggle: _hide_key_hint, send: Mode_switch, states: [ 有助記, 無助記]}
   # trime命令
