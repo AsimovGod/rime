@@ -3,4 +3,4 @@ patch:
   "switches/@1": {name: full_shape}  #半角,全角
   "switches/@2": {name: simplification, reset: 1}  #漢字,汉字
   "switches/@3": {name: ascii_punct}  #"。，","．，"
-  "switches/@4": {options: [_key_IME_switch], states: [ "ㄓ  同文输入法  " ]}
+  "switches/@4": {options: [_key_IME_switch], states: [ "  ㄓ  " ]}
