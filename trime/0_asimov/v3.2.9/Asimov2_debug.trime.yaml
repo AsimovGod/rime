@@ -16,8 +16,7 @@ style:
   candidate_spacing: 0.5 #候選間距
   candidate_text_size: 22 #候選字號
   candidate_use_cursor: true #高亮候選項
-  candidate_view_height: 32 #候選區高度
-##  candidate_view_height: 28 #候選區高度
+  candidate_view_height: 28 #候選區高度
   color_scheme: default #配色方案
   comment_font: comment.ttf #編碼提示字型
   comment_height: 12 #編碼提示區高度
@@ -212,7 +211,7 @@ preset_color_schemes:
     light_scheme: 1_google
     name: 1_hong
     author: "风花絮"
-    back_color: 0xff353638
+    back_color: 0x000000
     border_color: 0xff353638
     candidate_text_color: 0xffffffff
     hilited_back_color: 0x00141617
@@ -946,7 +945,7 @@ preset_keys:
 ##  Return: {label: enter_labels, send: Return}
   Return1: {label: enter_labels, send: Return }
 ##  Return1: {label: Enter, send: Return }
-  Hide: {label: ▼, send: BACK}
+  Hide: {label: "▽", send: BACK}
 ##  Hide: {label: 隱藏, send: BACK}
   BackSpace: {label: 退格, repeatable: true, send: BackSpace}
   space: {repeatable: false, functional: false, send: space}
@@ -988,7 +987,7 @@ preset_keys:
   # rime組合鍵
   F4: {label: 方案選單, send: F4}
   BackToPreviousSyllable: {label: 刪音節, send: Control+BackSpace}
-  CommitRawInput: {label: 编码, send: Control+Return}
+  CommitRawInput: {label: " ", send: Control+Return}
 ##  CommitRawInput: {label: 編碼, send: Control+Return}
   CommitScriptText: {label: 編碼, send: Shift+Return}
   CommitComment: {label: 編碼, send: Control+Shift+Return}
@@ -996,13 +995,10 @@ preset_keys:
 ##  DeleteCandidate: {label: 刪詞, send: Control+Delete}
   # rime狀態
   Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中文, 西文 ]}
-  Mode_switch_1: {toggle: ascii_mode, send: Mode_switch, states: [ 西文, 中文 ]}
   Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
-  Zenkaku_Hankaku_1: {toggle: full_shape, send: Mode_switch, states: [ 全角, 半角 ]}
   Henkan: {toggle: simplification, send: Mode_switch, states: [ 漢字, 汉字 ]}
   Charset_switch: {toggle: extended_charset, send: Mode_switch, states: [ 常用, 增廣 ]}
   Punct_switch: {toggle: ascii_punct, send: Mode_switch, states: [ 。，, ．， ]}
-  Punct_switch_1: {toggle: ascii_punct, send: Mode_switch, states: [ ．，, 。， ]}
   #切换键盘
 
 ###
@@ -1011,7 +1007,6 @@ preset_keys:
   Keyboard_seldon2: {label: 编辑, send: Eisu_toggle, select: seldon2}
   liquid_keyboard_tabs: { label: 更多, send: function, command: liquid_keyboard, option: "目录" }
   liquid_keyboard_collection: { label: 收藏, send: function, command: liquid_keyboard, option: "收藏" }
-  liquid_keyboard_candidate: { label: " ", send: function, command: liquid_keyboard, option: "候选" }
 ###
 
   Keyboard_symbols: {label: 符號, send: Eisu_toggle, select: symbols}
@@ -1026,7 +1021,8 @@ preset_keys:
   liquid_keyboard_clipboard: { label: ⏍, send: function, command: liquid_keyboard, option: "剪贴" }
 ##  liquid_keyboard_clipboard: { label: 剪贴, send: function, command: liquid_keyboard, option: "剪贴" }
   # trime設定
-  IME_switch: { label: 🌐, send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
+  IME_switch: { label: "同文输入法", send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
+##  IME_switch: { label: 🌐, send: LANGUAGE_SWITCH } #彈出對話框選擇輸入法
   IME_last: { label: 上一輸入法, send: LANGUAGE_SWITCH, select: .last } #直接切換到上一輸入法
   IME_next: { label: 下一輸入法, send: LANGUAGE_SWITCH, select: .next } #直接切換到下一輸入法
   Schema_switch: {label: " ", send: Control+Shift+1}
@@ -1037,15 +1033,16 @@ preset_keys:
   Color_switch: {label: 配色, send: PROG_RED}
   Help: {label: 說明, send: Help}
   Info: {label: 關於, send: INFO}
-  Menu: {label: ◆, send: Menu}
+  Menu: {label: Menu, send: Menu}
 ##  Menu: {label: 方案, send: Menu}
-  Settings: {label: Config, send: SETTINGS}
-##  Settings: {label: 設定, send: SETTINGS}
+  Settings: {label: 設定, send: SETTINGS}
   Color_settings: {label: 配色, send: SETTINGS, option: "color"}
   Theme_settings: {label: 主題, send: SETTINGS, option: "theme"}
   Schema_settings: {label: 方案, send: SETTINGS, option: "schema"}
-  Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [ 有候選, 無候選]}
-  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [ 有註釋, 無註釋]}
+  Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [ "◇", "□"]}
+##  Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [ 有候選, 無候選]}
+  Comment_switch: {toggle: _hide_comment, send: Mode_switch}
+##  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [ 有註釋, 無註釋]}
   Hint_switch: {toggle: _hide_key_hint, send: Mode_switch, states: [ 有助記, 無助記]}
   # trime命令
   Date: {label: 日期, command: date, option: "yyyy-MM-dd"}
@@ -1078,12 +1075,13 @@ preset_keyboards:
     height: 44
     keys:
     #0
-    - {click: Menu, long_click: Schema_switch, width: 16}
-    - {click: Mode_switch, long_click: Mode_switch_1, width: 17}
-    - {click: Zenkaku_Hankaku, long_click: Zenkaku_Hankaku_1, width: 17}
-    - {click: Henkan, long_click: Charset_switch, width: 17}
-    - {click: Punct_switch, long_click: Punct_switch_1, width: 17}
-    - {click: Hide, long_click: liquid_keyboard_candidate, width: 16}
+    - {click: Candidate_switch, long_click: Comment_switch, width: 12, key_back_color: 0x000000}
+    - {click: Punct_switch, width: 14, key_back_color: 0x000000}
+    - {click: Zenkaku_Hankaku, width: 14, key_back_color: 0x000000}
+    - {click: IME_switch, width: 20, key_back_color: 0x000000}
+    - {click: Henkan, width: 14, key_back_color: 0x000000}
+    - {click: Mode_switch,  width: 14, key_back_color: 0x000000}
+    - {click: Hide, long_click: liquid_keyboard_candidate, width: 12, key_back_color: 0x000000}
     #1
     - {click: '1', long_click: '!'}
     - {click: '2', long_click: '@'}
@@ -1129,7 +1127,7 @@ preset_keyboards:
     - {click: 'm', long_click: Right}
     - {click: BackSpace, swipe_up: Escape, width: 15}
     #5
-    - {click: Settings, long_click: Sync, width: 15}
+    - {click: Menu, long_click: Schema_switch, width: 15}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs}
     - {click: ',', label: '，', long_click: '<'}
     - {click: space, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 30}
@@ -1181,7 +1179,7 @@ preset_keyboards:
     - {click: 'KP_0', long_click: ')'}
     - {click: '=', long_click: '+'}
     #5
-    - {click: Settings, long_click: Sync, width: 14}
+    - {click: Menu, long_click: Schema_switch, width: 15}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, width: 14}
     - {click: Shift_S, width: 14}
     - {click: space_l,, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 16}
@@ -1233,7 +1231,7 @@ preset_keyboards:
     - {click: redo}
     - {click: DeleteCandidate}
     #5
-    - {click: Settings, long_click: Sync, width: 14}
+    - {click: Menu, long_click: Schema_switch, width: 15}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, width: 14}
     - {click: Shift_S, width: 14}
     - {click: space_l,, long_click: Mode_switch, swipe_left: Mode_switch, swipe_right: Mode_switch, width: 16}
