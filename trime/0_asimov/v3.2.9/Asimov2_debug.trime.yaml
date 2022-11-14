@@ -1087,11 +1087,11 @@ preset_keyboards:
     keys:
     #0
     - {click: Candidate_switch, width: 12, key_back_color: 0x00}
-    - {click: Henkan_Charset_switch, long_click: Charset_switch_show,width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Henkan_Charset_switch, long_click: Charset_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Punct_switch, width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
     - {click: Zenkaku_Hankaku, width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Hide, width: 12, key_back_color: 0x00}
     #1
     - {click: '1', long_click: '!'}
@@ -1140,9 +1140,9 @@ preset_keyboards:
     #5
     - {click: Menu, long_click: Schema_switch, width: 15}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 16}
-    - {click: ',', label: '，', long_click: '<', composing: "'"}
-    - {click: space, swipe_left: Left, swipe_right: Right, swipe_up: Tab, width: 30}
-    - {click: '.', label: '。', long_click: '>', composing: "'"}
+    - {click: ',', label: '，', long_click: '<'}
+    - {click: space, swipe_left: Left, swipe_right: Right, width: 30}
+    - {click: '.', label: '。', long_click: '>'}
     - {click: Keyboard_seldon1, long_click: Keyboard_seldon2}
     - {click: Return, long_click: CommitRawInput, width: 15}
 
@@ -1155,11 +1155,11 @@ preset_keyboards:
     keys:
     #0
     - {click: Candidate_switch, width: 12, key_back_color: 0x00}
-    - {click: Henkan_Charset_switch, long_click: Charset_switch_show,width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Henkan_Charset_switch, long_click: Charset_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Punct_switch, width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
     - {click: Zenkaku_Hankaku, width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Hide, width: 12, key_back_color: 0x00}
     #1
     - {click: cut}
@@ -1216,11 +1216,11 @@ preset_keyboards:
     keys:
     #0
     - {click: Candidate_switch, width: 12, key_back_color: 0x00}
-    - {click: Henkan_Charset_switch, long_click: Charset_switch_show,width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Henkan_Charset_switch, long_click: Charset_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Punct_switch, width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
     - {click: Zenkaku_Hankaku, width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Hide, width: 12, key_back_color: 0x00}
     #1
     - {click: "'", long_click: '"'}
