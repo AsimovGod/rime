@@ -995,6 +995,13 @@ preset_keys:
   DeleteCandidate: {label: 删词, send: Control+Delete}
 ##  DeleteCandidate: {label: 刪詞, send: Control+Delete}
   # rime狀態
+
+###
+  Mode_switch_show: {toggle: ascii_mode, send: Mode_switch, states: [ zh, en ]}
+  Henkan_Charset_switch: {toggle: simplification,send: "{Control+Shift+4}{Control+Shift+5}", states: [ 漢字, 汉字 ]}
+  Charset_switch_show: {toggle: extended_charset, states: [ 常用, 增廣 ]}
+###
+
   Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中文, 西文 ]}
   Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
   Henkan: {toggle: simplification, send: Mode_switch, states: [ 漢字, 汉字 ]}
@@ -1077,13 +1084,13 @@ preset_keyboards:
     height: 44
     keys:
     #0
-    - {click: Candidate_switch, long_click: Comment_switch, width: 12, key_back_color: 0x00}
+    - {click: Candidate_switch, width: 12, key_back_color: 0x00}
+    - {click: Henkan_Charset_switch, long_click: Charset_switch_show,width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: Punct_switch, width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: Zenkaku_Hankaku, width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: IME_switch, width: 28, key_text_size: 19, key_back_color: 0x00}
-    - {click: Henkan, width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: Mode_switch, width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: Hide, long_click: liquid_keyboard_candidate, width: 12, key_back_color: 0x00}
+    - {click: Zenkaku_Hankaku, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Hide, width: 12, key_back_color: 0x00}
     #1
     - {click: '1', long_click: '!'}
     - {click: '2', long_click: '@'}
