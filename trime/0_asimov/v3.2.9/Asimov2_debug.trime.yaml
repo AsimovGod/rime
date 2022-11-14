@@ -997,8 +997,8 @@ preset_keys:
   # rime狀態
 
 ###
-  Mode_switch_show: {toggle: ascii_mode, send: Mode_switch, states: [ zh, en ]}
-  Henkan_Charset_switch: {toggle: simplification,send: "{Control+Shift+4}{Control+Shift+5}", states: [ 漢字, 汉字 ]}
+  Mode_switch_show: {toggle: ascii_mode, send: Mode_switch, states: [ ZH, EN ]}
+  Henkan_Charset_switch: {toggle: simplification,send: "{Control+Shift+4}{Control+Shift+5}", states: [ 繁體, 简体 ]}
   Charset_switch_show: {toggle: extended_charset, states: [ 常用, 增廣 ]}
 ###
 
