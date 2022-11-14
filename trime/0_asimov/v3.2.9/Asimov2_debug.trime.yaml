@@ -15,8 +15,9 @@ style:
   candidate_padding: 5 #候選項內邊距
   candidate_spacing: 0.5 #候選間距
   candidate_text_size: 22 #候選字號
-  candidate_use_cursor: flase #高亮候選項
-  candidate_view_height: 28 #候選區高度
+  candidate_use_cursor: true #高亮候選項
+  candidate_view_height: 32 #候選區高度
+##  candidate_view_height: 28 #候選區高度
   color_scheme: default #配色方案
   comment_font: comment.ttf #編碼提示字型
   comment_height: 12 #編碼提示區高度
@@ -24,7 +25,7 @@ style:
   comment_text_size: 14 #編碼提示字號
 ##  comment_text_size: 12 #編碼提示字號
   hanb_font: hanb.ttf #擴充字型
-  horizontal: false #水平模式
+  horizontal: true #水平模式
   horizontal_gap: 4 #鍵水平間距
 ##  horizontal_gap: 1 #鍵水平間距
   keyboard_padding: 0 #竖屏模式下，屏幕左右两侧与键盘的距离（曲面屏减少误触）
@@ -61,7 +62,7 @@ style:
     elevation: 5 #陰影(>=Android5.0)
     movable: false #是否可移動窗口，或僅移動一次 true|false|once
   window: #懸浮窗口組件
-#    - {start: "", move: 'ㄓ ', end: ""}
+    - {start: "", move: 'ㄓ ', end: ""}
     - {start: "", composition: "%s", end: "", letter_spacing: 0} #letter_spacing需要>=Android5.0。TODO: 不爲0時，會導致不換行的問題
     - {start: "\n", label: "%s.", candidate: "%s", comment: " %s", end: "", sep: " "}
   liquid_keyboard_window: #液态键盘模式下显示的悬浮窗口組件
@@ -85,9 +86,10 @@ style:
   latin_locale: en_US #西文語言
   locale: zh_CN #預設語言 zh_TW,zh_CN,zh_HK,""
 ##  locale: zh_TW #預設語言 zh_TW,zh_CN,zh_HK,""
-  keyboard_height: 280 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height: 300 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
 ##  keyboard_height: 250 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
-  keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height_land: 250 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
+##  keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
   preview_font: latin.ttf #按鍵提示字型
   preview_height: 60 #按鍵提示高度
   preview_offset: -12 #按鍵提示縱向偏移
@@ -997,13 +999,15 @@ preset_keys:
   # rime狀態
 
 ###
-  Mode_switch_show: {toggle: ascii_mode, send: Mode_switch, states: [ ZH, EN ]}
-  Henkan_Charset_switch: {toggle: simplification,send: "{Control+Shift+4}{Control+Shift+5}", states: [ 繁體, 简体 ]}
+  Mode_switch_show: {toggle: ascii_mode, send: Mode_switch, states: [ zh, en ]}
+  Henkan_Charset_switch: {toggle: simplification, text: "{Control+Shift+4}{Control+Shift+5}", states: [ 繁體, 简体 ]}
   Charset_switch_show: {toggle: extended_charset, states: [ 常用, 增廣 ]}
 ###
 
-  Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中文, 西文 ]}
-  Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
+  Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中文, 英文 ]}
+##  Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中文, 西文 ]}
+  Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半, 全 ]}
+## Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
   Henkan: {toggle: simplification, send: Mode_switch, states: [ 漢字, 汉字 ]}
   Charset_switch: {toggle: extended_charset, send: Mode_switch, states: [ 常用, 增廣 ]}
   Punct_switch: {toggle: ascii_punct, send: Mode_switch, states: [ 。，, ．， ]}
@@ -1015,7 +1019,6 @@ preset_keys:
   Keyboard_seldon2: {label: 编辑, send: Eisu_toggle, select: seldon2}
   liquid_keyboard_tabs: { label: 更多, send: function, command: liquid_keyboard, option: "目录" }
   liquid_keyboard_collection: { label: 收藏, send: function, command: liquid_keyboard, option: "收藏" }
-  liquid_keyboard_candidate: { label: " ", send: function, command: liquid_keyboard, option: "候选" }
 ###
 
   Keyboard_symbols: {label: 符號, send: Eisu_toggle, select: symbols}
@@ -1050,8 +1053,7 @@ preset_keys:
   Schema_settings: {label: 方案, send: SETTINGS, option: "schema"}
   Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [ "◇", "□"]}
 ##  Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [ 有候選, 無候選]}
-  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [ "", ""]}
-##  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [ 有註釋, 無註釋]}
+  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [ 有註釋, 無註釋]}
   Hint_switch: {toggle: _hide_key_hint, send: Mode_switch, states: [ 有助記, 無助記]}
   # trime命令
   Date: {label: 日期, command: date, option: "yyyy-MM-dd"}
@@ -1087,7 +1089,7 @@ preset_keyboards:
     - {click: Candidate_switch, width: 12, key_back_color: 0x00}
     - {click: Henkan_Charset_switch, long_click: Charset_switch_show,width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: Punct_switch, width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: IME_switch, width: 28, key_text_size: 19, key_back_color: 0x00}
+    - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
     - {click: Zenkaku_Hankaku, width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: Hide, width: 12, key_back_color: 0x00}
@@ -1138,9 +1140,9 @@ preset_keyboards:
     #5
     - {click: Menu, long_click: Schema_switch, width: 15}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 16}
-    - {click: ',', label: '，', long_click: '<'}
-    - {click: space, width: 30}
-    - {click: '.', label: '。', long_click: '>'}
+    - {click: ',', label: '，', long_click: '<', composing: "'"}
+    - {click: space, swipe_left: Left, swipe_right: Right, swipe_up: Tab, width: 30}
+    - {click: '.', label: '。', long_click: '>', composing: "'"}
     - {click: Keyboard_seldon1, long_click: Keyboard_seldon2}
     - {click: Return, long_click: CommitRawInput, width: 15}
 
@@ -1151,6 +1153,14 @@ preset_keyboards:
     width: 12.5
     height: 44
     keys:
+    #0
+    - {click: Candidate_switch, width: 12, key_back_color: 0x00}
+    - {click: Henkan_Charset_switch, long_click: Charset_switch_show,width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Punct_switch, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
+    - {click: Zenkaku_Hankaku, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Hide, width: 12, key_back_color: 0x00}
     #1
     - {click: cut}
     - {click: Home}
@@ -1204,6 +1214,14 @@ preset_keyboards:
     width: 12.5
     height: 44
     keys:
+    #0
+    - {click: Candidate_switch, width: 12, key_back_color: 0x00}
+    - {click: Henkan_Charset_switch, long_click: Charset_switch_show,width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Punct_switch, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
+    - {click: Zenkaku_Hankaku, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 18, key_back_color: 0x00}
+    - {click: Hide, width: 12, key_back_color: 0x00}
     #1
     - {click: "'", long_click: '"'}
     - {click: 'KP_1', long_click: '!'}
