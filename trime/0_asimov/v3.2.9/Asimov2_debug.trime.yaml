@@ -941,6 +941,7 @@ preset_keys:
   space_l: {label: 空格, repeatable: false, functional: false, send: space}
   paste_clip: {label: 剪贴, send: function, command: clipboard}
   Tab: {label: Tab, send: Tab}
+  Tab_l: {label: " ", send: Tab}
 ###
 
   Shift_L: {label: Shift, send: Shift_L, shift_lock: long}
@@ -995,8 +996,7 @@ preset_keys:
 ##  CommitRawInput: {label: 編碼, send: Control+Return}
   CommitScriptText: {label: 編碼, send: Shift+Return}
   CommitComment: {label: 編碼, send: Control+Shift+Return}
-  DeleteCandidate: {label: 删词, send: Control+Delete}
-##  DeleteCandidate: {label: 刪詞, send: Control+Delete}
+  DeleteCandidate: {label: 刪詞, send: Control+Delete}
   # rime狀態
 
 ###
@@ -1137,12 +1137,12 @@ preset_keyboards:
     - {click: 'b', long_click: Left}
     - {click: 'n', long_click: Down}
     - {click: 'm', long_click: Right}
-    - {click: BackSpace, long_click: Delete, width: 15}
+    - {click: BackSpace, swipe_up: Delete, width: 15}
     #5
     - {click: Menu, long_click: Schema_switch, width: 15}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 16}
     - {click: ',', label: '，', long_click: '<'}
-    - {click: space, swipe_down: Tab, swipe_left: Left, swipe_right: Right, width: 30}
+    - {click: space, long_click: Tab_l, swipe_left: Left, swipe_right: Right, width: 30}
     - {click: '.', label: '。', long_click: '>'}
     - {click: Keyboard_seldon1, long_click: Keyboard_seldon2}
     - {click: Return, long_click: CommitRawInput, width: 15}
@@ -1190,7 +1190,7 @@ preset_keyboards:
     - {click: 'KP_9', long_click: '('}
     - {click: '-', long_click: '_'}
     #4
-    - {click: DeleteCandidate}
+    - {click: Delete}
     - {click: undo}
     - {click: select_all}
     - {click: redo}
@@ -1258,7 +1258,7 @@ preset_keyboards:
     - {click: undo}
     - {click: select_all}
     - {click: redo}
-    - {click: DeleteCandidate}
+    - {click: Delete}
     #5
     - {click: Menu, long_click: Schema_switch, width: 14.5}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 16}
