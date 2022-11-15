@@ -9,6 +9,9 @@ patch:
   - name: simplification
     reset: 1
 ##    states: [ 漢字, 汉字 ]
+  - name: extended_charset
+    reset: 0
+##    states: [ 常用, 增廣 ]
   - name: ascii_punct
     reset: 0
 ##    states: [ 。，, ．， ]
