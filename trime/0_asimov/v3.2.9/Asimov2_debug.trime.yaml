@@ -1090,7 +1090,7 @@ preset_keyboards:
     - {click: Candidate_switch, width: 12, key_back_color: 0x00}
     - {click: Henkan_Charset_switch, long_click: Charset_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Punct_switch, composing: "'", width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: IME_switch, swipe_up: IME_last, swipe_down: IME_next, width: 28, key_text_size: 20, key_back_color: 0x00}
+    - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
     - {click: Zenkaku_Hankaku, composing: Escape_C, width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Hide, width: 12, key_back_color: 0x00}
@@ -1137,12 +1137,12 @@ preset_keyboards:
     - {click: 'b', long_click: Left}
     - {click: 'n', long_click: Down}
     - {click: 'm', long_click: Right}
-    - {click: BackSpace, swipe_up: Escape, width: 15}
+    - {click: BackSpace, long_click: Delete, width: 15}
     #5
     - {click: Menu, long_click: Schema_switch, width: 15}
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 16}
     - {click: ',', label: '，', long_click: '<'}
-    - {click: space, swipe_left: Left, swipe_right: Right, width: 30}
+    - {click: space, swipe_down: Tab, swipe_left: Left, swipe_right: Right, width: 30}
     - {click: '.', label: '。', long_click: '>'}
     - {click: Keyboard_seldon1, long_click: Keyboard_seldon2}
     - {click: Return, long_click: CommitRawInput, width: 15}
@@ -1158,7 +1158,7 @@ preset_keyboards:
     - {click: Candidate_switch, width: 12, key_back_color: 0x00}
     - {click: Henkan_Charset_switch, long_click: Charset_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Punct_switch, composing: "'", width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: IME_switch, swipe_up: IME_last, swipe_down: IME_next, width: 28, key_text_size: 20, key_back_color: 0x00}
+    - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
     - {click: Zenkaku_Hankaku, composing: Escape_C, width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Hide, width: 12, key_back_color: 0x00}
@@ -1203,7 +1203,7 @@ preset_keyboards:
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 16}
     - {click: Shift_S, width: 14.5}
     - {click: space, width: 17}
-    - {click: BackSpace, swipe_up: Escape, width: 14.5}
+    - {click: BackSpace, long_click: Delete, width: 14.5}
     - {click: Keyboard_asimov, long_click: Keyboard_seldon2}
     - {click: Return, long_click: CommitRawInput, width: 14.5}
 
@@ -1219,7 +1219,7 @@ preset_keyboards:
     - {click: Candidate_switch, width: 12, key_back_color: 0x00}
     - {click: Henkan_Charset_switch, long_click: Charset_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Punct_switch, composing: "'", width: 12, key_text_size: 18, key_back_color: 0x00}
-    - {click: IME_switch, swipe_up: IME_last, swipe_down: IME_next, width: 28, key_text_size: 20, key_back_color: 0x00}
+    - {click: IME_switch, width: 28, key_text_size: 20, key_back_color: 0x00}
     - {click: Zenkaku_Hankaku, composing: Escape_C, width: 12, key_text_size: 18, key_back_color: 0x00}
     - {click: Mode_switch, long_click: Mode_switch_show, width: 12, key_text_size: 16, key_back_color: 0x00}
     - {click: Hide, width: 12, key_back_color: 0x00}
@@ -1264,7 +1264,7 @@ preset_keyboards:
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 16}
     - {click: Shift_S, width: 14.5}
     - {click: space, width: 17}
-    - {click: BackSpace, swipe_up: Escape, width: 14.5}
+    - {click: BackSpace, long_click: Delete, width: 14.5}
     - {click: Keyboard_asimov, long_click: Keyboard_seldon2}
     - {click: Return, long_click: CommitRawInput, width: 14.5}
 
