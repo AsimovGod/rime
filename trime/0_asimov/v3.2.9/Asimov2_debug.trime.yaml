@@ -1203,7 +1203,7 @@ preset_keyboards:
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 16}
     - {click: Shift_S, width: 14.5}
     - {click: space, width: 17}
-    - {click: BackSpace, long_click: Delete, width: 14.5}
+    - {click: BackSpace, width: 14.5}
     - {click: Keyboard_asimov, long_click: Keyboard_seldon2}
     - {click: Return, long_click: CommitRawInput, width: 14.5}
 
@@ -1264,7 +1264,7 @@ preset_keyboards:
     - {click: liquid_keyboard_clipboard, long_click: liquid_keyboard_tabs, key_text_size: 16}
     - {click: Shift_S, width: 14.5}
     - {click: space, width: 17}
-    - {click: BackSpace, long_click: Delete, width: 14.5}
+    - {click: BackSpace, width: 14.5}
     - {click: Keyboard_asimov, long_click: Keyboard_seldon2}
     - {click: Return, long_click: CommitRawInput, width: 14.5}
 
